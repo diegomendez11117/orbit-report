@@ -1,0 +1,24 @@
+<div class="wrap-table100">
+  <table>
+    <thead>
+      <tr class="table100-head">
+        <th class="column1" (click)="sort('name')">Name</th>
+        <th class="column2" (click)="sort('type')">Type</th>
+        <th class="column3" (click)="sort('operational')">Operational</th>
+        <th class="column4" (click)="sort('orbitType')">Orbit Type</th>
+        <th class="column5" (click)="sort('launchDate')">Launch Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let satellite of satellites">
+        <th class="column1">{{ satellite.name }}</th>
+        <th class="column2" [class.th-color]="satellite.shouldShowWarning()">
+          {{ satellite.type }}
+        </th>
+        <th class="column3">{{ satellite.operational }}</th>
+        <th class="column4">{{ satellite.orbitType }}</th>
+        <th class="column5">{{ satellite.launchDate }}</th>
+      </tr>
+    </tbody>
+  </table>
+</div>
